@@ -1,0 +1,35 @@
+:root {
+  --font-size: 10px;
+  --main-font: 'Roboto', sans-serif;
+  --header-font: 'Architects Daughter', cursive;
+  --header-font-color: lightgray;
+  --main-font-color: hsl(0, 0%, 83%);
+  --board-icon-color: hsl(240, 67%, 94%);
+  --main-bg: hsl(216, 18%, 16%);
+  --header-bg: hsl(216, 31%, 10%);
+  --icon-bg: hsl(217, 10%, 25%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size);
+
+  @media screen and (max-width: 1200px) {
+    font-size: 60%;
+  }
+
+  @media screen and (max-width: 980px) {
+    font-size: 58%;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 55%;
+  }
+}

@@ -1,0 +1,37 @@
+.score-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  .score-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .game-state {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .player-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      gap: 2rem;
+
+      .player-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--board-icon-color);
+        font-size: 15rem;
+      }
+    }
+  }
+}
