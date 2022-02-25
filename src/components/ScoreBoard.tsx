@@ -2,7 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 interface ScoreBoardProps {
-  winner: string;
+  desc: { title: string; subtitle: string };
+  isClicked: boolean;
+  setIsClicked: (isClicked: boolean) => void;
   player: IconDefinition;
   playerScore: number;
   computer: IconDefinition;
@@ -10,50 +12,38 @@ interface ScoreBoardProps {
 }
 
 export function ScoreBoard({
-  winner,
+  desc,
+  isClicked,
+  setIsClicked,
   player,
   playerScore,
   computer,
   computerScore
 }: ScoreBoardProps) {
-  const desc = !winner
-    ? {
-        title: 'Choose your weapon',
-        subtitle: 'First to score 5 points wins the game'
-      }
-    : winner === 'Tie'
-    ? {
-        title: 'Its a tie!',
-        subtitle: 'Click to play again'
-      }
-    : winner === 'Player'
-    ? {
-        title: 'You win!',
-        subtitle: `${computer} is beaten by ${player}`
-      }
-    : {
-        title: 'You lose!',
-        subtitle: `${player} is beaten by ${computer}`
-      };
-
   return (
     <div className='score-board'>
       <div className='score-text'>
         <h2>{desc.title}</h2>
-        <p>{desc.subtitle}</p>
+        <h3>{desc.subtitle}</h3>
       </div>
       <div className='game-state'>
         <div className='player-card'>
-          <div className='player-icon'>
+          <div
+            className={isClicked ? 'player-icon animate' : 'player-icon'}
+            onAnimationEnd={() => setIsClicked(false)}
+          >
             <FontAwesomeIcon icon={player} />
           </div>
-          <p>Player: {playerScore}</p>
+          <h4>Player: {playerScore}</h4>
         </div>
         <div className='player-card'>
-          <div className='player-icon'>
+          <div
+            className={isClicked ? 'player-icon animate' : 'player-icon'}
+            onAnimationEnd={() => setIsClicked(false)}
+          >
             <FontAwesomeIcon icon={computer} />
           </div>
-          <p>Computer: {computerScore}</p>
+          <h4>Computer: {computerScore}</h4>
         </div>
       </div>
     </div>

@@ -1,6 +1,16 @@
 body {
   font: normal 1.6rem/1.4 var(--main-font);
-  color: var(--main-font-color);
+}
+
+.App {
   min-height: 100vh;
   background-color: var(--main-bg);
+  color: var(--main-font-color);
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
 }

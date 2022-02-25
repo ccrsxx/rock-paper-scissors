@@ -8,7 +8,7 @@ interface GameBoardProps {
   faHandScissors: IconDefinition;
 }
 
-export function GameBoard({
+export function ChoiceBoard({
   handleClick,
   faHandBackFist,
   faHand,
@@ -16,30 +16,30 @@ export function GameBoard({
 }: GameBoardProps) {
   return (
     <div className='game-board'>
-      <div
+      <button
+        type='button'
         className='choice-card'
-        role='button'
         tabIndex={0}
         onClick={() => handleClick(faHandBackFist)}
       >
         <FontAwesomeIcon icon={faHandBackFist} />
-      </div>
-      <div
+      </button>
+      <button
+        type='button'
         className='choice-card'
-        role='button'
         tabIndex={0}
         onClick={() => handleClick(faHand)}
       >
         <FontAwesomeIcon icon={faHand} />
-      </div>
-      <div
+      </button>
+      <button
+        type='button'
         className='choice-card'
-        role='button'
         tabIndex={0}
         onClick={() => handleClick(faHandScissors)}
       >
         <FontAwesomeIcon icon={faHandScissors} />
-      </div>
+      </button>
     </div>
   );
 }

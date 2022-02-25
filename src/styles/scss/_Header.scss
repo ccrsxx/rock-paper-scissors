@@ -1,9 +1,10 @@
 .header {
   font: normal 2.5rem var(--header-font);
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 15vh;
   background-color: var(--header-bg);
-  color: var(--header-font-color);
+  color: yellow;
 }

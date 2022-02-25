@@ -23,14 +23,38 @@
       justify-content: center;
       align-items: center;
       font-size: 2rem;
+      font-weight: bold;
       gap: 2rem;
 
+      &:first-child {
+        color: blue;
+      }
+
+      &:last-child {
+        color: red;
+      }
+
       .player-icon {
+        width: 17rem;
+        padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: var(--board-icon-color);
+        color: inherit;
         font-size: 15rem;
+
+        &.animate {
+          animation: pop-up 300ms ease-in-out forwards;
+
+          @keyframes pop-up {
+            from {
+              transform: scale(1.2);
+            }
+            to {
+              transform: scale(1);
+            }
+          }
+        }
       }
     }
   }

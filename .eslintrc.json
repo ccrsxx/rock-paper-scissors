@@ -30,6 +30,7 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-unused-expressions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "warn",
     "jsx-quotes": ["error", "prefer-single"],
     "no-console": "warn",
     "linebreak-style": "off",
